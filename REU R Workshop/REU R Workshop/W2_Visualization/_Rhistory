@@ -1,0 +1,44 @@
+update.packages()
+update.packages()
+source("http://kingaa.github.io/sbied/prep/packages.R",echo=TRUE)
+source("http://kingaa.github.io/sbied/prep/pompTest.R",echo=TRUE)
+update.packages()
+source("http://kingaa.github.io/sbied/prep/packages.R",echo=TRUE)
+source("http://kingaa.github.io/sbied/prep/packages.R",echo=TRUE)
+flu <- read.csv('flu.csv')
+flu <- read.csv('flu.csv')
+flu <- read.csv('flus.csv')
+flu <- read.csv('flu.csv')
+flu <- read.csv('flu.csv')
+setwd("~/REU R Workshop/REU R Workshop/W2_Visualization")
+load(data.RData)
+load('data.RData')
+ls
+ls()
+niamey
+plot(flu, type='b', log='y', xlab='Day', ylab='Number of individuals infected')
+help(lm)
+model<-lm(formula=log(flu)~day-1,data=subset(flu,day<=5))
+model2<-lm(formula=log(niamey[,1])~0:15, data=niamey)
+model2<-lm(formula=log(niamey[,1])~0, data=niamey)
+model2
+plot(niamey$V1, type='b', log='y')
+model2<-lm(formula=log(niamey$V1)~index-1, data=subset(niamey, index<=8))
+model2<-lm(formula=log(niamey$V1)~as.numeric(rownames(niamey)), data=subset(niamey, as.numeric(rownames(niamey)<=8))
+model2<-lm(formula=log(niamey$V1)~as.numeric(rownames(niamey)), data=subset(niamey, as.numeric(rownames(niamey)<=8)))
+model2<-lm(formula=log(niamey$V1)~as.numeric(rownames(niamey)), data=subset(niamey, as.numeric(rownames(niamey))<=8))
+ls
+ls()
+model2
+summary(model2)
+model2<-lm(formula=log(niamey$V1)~as.numeric(rownames(niamey))-1, data=subset(niamey, as.numeric(rownames(niamey))<=8))
+model2
+model
+summary(model2)
+model2<-lm(formula=log(niamey$V1)~as.numeric(rownames(niamey))-1, data=subset(niamey, as.numeric(rownames(niamey))<=10))
+summary(model2)
+model2<-lm(formula=log(niamey$V1)~as.numeric(rownames(niamey))-1, data=subset(niamey$V1, as.numeric(rownames(niamey))<=10))
+model2<-lm(formula=log(niamey$V1)~as.numeric(rownames(niamey))-1, data=subset(niamey,as.numeric(rownames(niamey))<=10))
+model2
+model2<-lm(formula=log(niamey$V1)~as.numeric(rownames(niamey))-1, data=subset(niamey,as.numeric(rownames(niamey))<=10))
+source('~/REU/REU R Workshop/REU R Workshop/W2_Visualization/DataVisualWorkshop.R', echo=TRUE)

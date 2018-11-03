@@ -1,0 +1,319 @@
+---
+title: "Report/ MS Extravaganza"
+author: | 
+  | Author1^1^, Author2^2^, Author3^1^ and Author4^2^
+  | 1. Affiliation1
+  | 2. Affiliation2
+date: "February 25, 2016"
+output:
+  pdf_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 7
+ 
+documentclass: article
+abstract: Our study will rock your world... 
+
+fontsize: 12pt
+footnotesize: 8pt
+geometry: margin=1.5in
+linestretch: 1.5
+csl: plos-biology.csl
+bibliography: MI-Refs.bib
+---
+
+##First steps
+
+>Step 1: Install R studio
+
+>Step 2: Need to download the rmarkdown, knitr and pander packages -- these are specific to the rmarkdown document making magic
+
+##Creating the rmarkdown script
+
+>1. Open R studio
+>2. File --> New File --> R markdown --> Create *file name* and choose the *type* of Document HTML, PDF, and MS Word)
+
+>3. The default anatomy of the document is created.
+
+>4. At the top of the document in the head you can make specifications, these will not all appear in the pdf (like in latex)
+
+>5. When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+
+>6. As you build the document,  you can **Knit** for previews
+
+##Headings ranked by importance
+
+#This is the largest heading
+##This is the second largest heading: you would type "/##Your next subheader"
+###This is the third largest heading: you would type "/###Your next subheader"
+####This is the fourth largest heading: you would type "/####Smaller"
+#####This is the fifth largest heading: you would type "/#####Even smaller"
+######This is the sixth largest heading: you would type "/######You totally get this pattern"
+
+
+##Ways to get different text formats
+
+1. For numbered lists you would write "1. The list thing" (no tab in front, but you DO need a space between the period and the text)
+    * For a sub-section of the list, you would write "*tab* + The list thing", with a tab in front and a space between the plus (- or + also works in place of the \*)
+
+* For bulleted lists, you can use \*, -, or + in (\* your thing)
+    * For a sub-bullet, you'd use "*tab* - the thing"
+     
+   
+
+For *italics*, you can do \*italics\* or \_italics\_. For **bold**, you can do \**bold\** or \__bold\__. 
+
+##Links
+
+To do [links](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) you type "[the text] (the URL)" with no space in between.
+
+
+##Quotes
+Let's quote some stuff:
+
+> “Mathematics without natural history is sterile, but natural history without mathematics is muddled.”
+> _John Maynard Smith_
+
+##Footnotes
+This is regular text^[with a footnote].
+
+&nbsp;
+
+
+##Formulas and equations
+
+**Example 1**: This summation expression $\sum_{i=1}^n X_i$ appears inline. This equation is also inline $E=mc^2$
+
+**Example 2**:This summation expression is in display form.
+
+$$\sum_{i=1}^n X_i$$
+
+**Example 3**: $$f(x, \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+**Example 4**: Numbering the equations
+
+(@cauchy) $f(x) = \frac{1}{\pi(1+x^2)}$ 
+
+The Cauchy distribution (with density given in Eq. (@cauchy)) is a special case 
+of Student's $t$-distribution (Eq. (@tdist)) with $\nu = 1$.
+
+(@tdist) $$f(t; \nu) = \frac{\Gamma(\frac{\nu+1}{2})} {\sqrt{\nu\pi}\,\Gamma(\frac{\nu}{2})} \left(1+\frac{t^2}{\nu} \right)^{-\frac{\nu+1}{2}}$$
+
+\newpage
+
+**Example 5**:
+<div class="equation">
+(@gamma) $$\Gamma(t) = \int^\infty_0 x^{t-1}e^{-x}dx$$
+</div>
+
+
+**Example 6**:
+<div id="volterra" class="equation">
+(@volterra) $$\frac{dS}{dt} = x(\alpha - \beta y)$$
+$$\frac{dy}{dt} = - y(\gamma - \delta  x)$$
+</div>
+
+The system of ordinary differential equations given by 
+Eq. <span id="volterra" class="eq_ref">(@volterra)</span> 
+is commonly used to describe predator-prey systems. Any solution to this
+system of equations satisfies the equality in 
+Eq. <span id="volterra_constant" class="eq_ref">(@volterra_constant)</span>.
+
+<div id="volterra_constant" class="equation">
+(@volterra_constant) $$V = -\delta \, x + \gamma \, \log(x) - \beta \, y + \alpha \, \log(y)$$
+</div>
+
+
+##Subscripts and superscripts
+
+**Example 1**: $$X_i$$
+**Example 2**: $$X_{i}$$
+**Example 3**: $$X^2_{i,j}$$
+**Example 4**: To do^superscripts^ in text  you can also use type\^superscript\^.
+
+##Square roots
+
+**Example**: $$\sqrt{b^2 - 4ac}$$
+
+##Fractions
+
+**Example**: $$\frac{4z^3}{16}$$
+
+##Summation expressions
+
+**Example**: $$\sum_{i=1}^{n} X^3_i$$
+
+##Parenthesis
+
+**Example**: $$\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)$$
+
+
+
+
+
+##Greek Letters
+
+**Example**: $$\alpha, \beta,  \gamma, \Gamma$$
+
+##Special Symbols
+
+**Example 1**: $$a \pm b$$
+**Example 2**: $$x \ge 15$$
+**Example 3**: $$a_i \ge 0~~~\forall i$$
+
+##Integrals and other functions
+**Example**: $$\int_0^{2\pi} \sin x~dx$$
+
+##Matrices
+
+**Example**: $$\mathbf{X} = \left[\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}\right]
+$$
+
+&nbsp;
+
+
+##Making your code easily reproducible by your collaborators
+
+##Chunks of code 
+
+If in the middle of our text we need to do analysis or plots, we can insert _R_ code can easily using what we called "chunks" of code. You can embed an R code chunk like this:
+```{r}
+summary(cars)
+```
+
+##Analysis
+```{r loading libraries, comment=""  }
+set.seed(1234)
+library(ggplot2)
+library(lattice)
+library(MASS)
+test=rnorm(10000, 1,0.1)
+```
+
+
+\newpage
+
+##Figures
+
+By default there are no captions, if you dont specify dimensions it will plot default measures, if you don't want all code to be shown you need to add the follwing {r echo = FALSE}.
+
+
+```{r histogram, eval=TRUE, comment=""}
+hist(test, col='dodgerblue2', las=1, breaks=200, main='')
+box()
+```
+
+
+\newpage
+
+
+### Control code chunks, figure size and adding captions
+The following is an example of a smaller figure using `fig.width` and `fig.height` options. It also has fig.cap for captions.
+Note the {r echo=FALSE} to conceal the code chunks.
+
+```{r ,fig.width=4,fig.height=4,echo=FALSE,message=FALSE,include=TRUE,fig.cap="This figure will blow your mind"}
+library(ggplot2)
+plotData <- data.frame(x = rnorm(1000, 1, 5), y = rnorm(1000, 0, 2))
+plotKeep <- ggplot(plotData, aes(x = x, y = y)) + geom_point(colour="red", alpha=0.2)+theme_bw()
+plotKeep
+```
+
+\newpage
+
+###Inserting pre generated figures or images
+
+You can also insert jpeg, pdf or png files 
+
+![Lola](lola.jpg)
+
+\newpage
+
+
+###Generating multi figures 
+
+Like with any RScript, the use of par(mfrow=c(#,#)) will aloow you to generate multiple plots as a group.
+I have wrote a small loop here to allow for labelling of each subplot
+
+```{r, bunch_o_figs_pointsize, fig.height=4, fig.width=8,echo=FALSE,include=TRUE, dev.args=list(pointsize=12)}
+n <- 100
+x <- rnorm(n)
+par(mfrow=c(1,2), las=1)
+for(i in 1:4) {
+  y <- i*x + rnorm(n)
+  plot(x, y, main=i, cex.main= 0.8, cex.lab= 1.2)
+ 
+}
+```
+Figure 3: Multiple plots (1-4)
+
+
+\newpage
+
+##Tables
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r kable, echo=FALSE}
+n <- 100
+x <- rnorm(n)
+y <- 2*x + rnorm(n)
+out <- lm(y ~ x)
+library(knitr)
+kable(summary(out)$coef, digits=2,caption = 'Producing an output model as a table')
+```
+
+```{r xtable, results='asis', echo= FALSE}
+library(knitr)
+Region1<-rep(c("East Midlands","Eastern"), each = 2)
+City<-c("Lincoln","Nottingham","Bedford","Norwich")
+Cities<-cbind(Region1, City)
+colnames(Cities)<-c("Region","City")
+kable(Cities,caption = 'Custom table')
+```
+
+
+##Using references: what you need
+
+1. A *bib* file with your library or references. 
+2. A *cls* file that will indicate the journal style for the references. In this [zotero link](https://www.zotero.org/styles) you can find hundreds of styles in *cls* format, that you need to define at the beggining of the rmarkdown document (above I'm using *plos-biology*)
+
+**Example**: A study has shown blah [@Adams1947].  Campbell [-@Campbell2012] has show blah.
+
+
+##Spaces
+
+Forcing spaces between figures or paragraphs with ("& nbsp;" with no spaces) or leaving a line blank between paragraphs.
+
+Navideh likes frozen yoghurt.
+
+Toby loves bananas.
+
+&nbsp;
+
+&nbsp;
+
+Diego has a chia seeds' plantation.
+
+
+##Page breaks
+Like in latex the command “forward slash newpage” will allow you to force a page break
+
+
+
+\newpage
+
+##Packages used, so your collaborators know what you used
+
+```{r, echo_session_info, echo=FALSE, results="asis"}
+  toLatex(sessionInfo())
+```
+
+##References
+
+

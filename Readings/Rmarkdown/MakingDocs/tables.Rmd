@@ -1,0 +1,50 @@
+
+---
+title: ""
+author: ""
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhead[CO,CE]{Bento et al. Maternal Immunization Supplementary materials}
+- \fancyfoot[CO,CE]{If you need a foooter}
+- \fancyfoot[LE,RO]{\thepage}
+output: pdf_document
+classoption: landscape
+---
+Table S1 Selected historical pertussis vaccination and immunity studies
+```{r xtable, results='asis', echo= FALSE}
+library(knitr)
+library(pander)
+library(koRpus)
+Reference<-c("[42]","[21]","[22]", "[29]","[17]","[19]", "[18]", "[20]")
+            
+Study<-c("Early immunization infants under 2 and 3 months using wP (alum. Precipitated)","wP vaccination of newborns","Vaccine in infants early age two different types of wP vaccine.","Series of injections of wP pertussis vaccine later months of pregnancy","Testing mother and babies during first ten days of life- No vaccine", "*H pertussis* vaccine first months of life.","Immunization of mothers during pregnancy with *H pertussis*", "wP vaccine in pregnant mothers (5-6th month of pregnancy)")
+
+Measure<-c("Rapid agglutination test and local reactions to vaccine","Serum levels of agglutinins and Ab","Sera tested for [Ab] at birth","Opsonocytophagic reaction to pertussis ", "Opsonocytophagic reaction to pertussis ","Complement fixation","Opsonocytophagic tests mothers and newborn","Blood of mothers and newborns testing agglutinins")
+Results<-c("Some local reactions of differing seriousness.  78.2% of 1834 infants’ moderate/ strong positive agglutination two to four months after immunization","Most vaccinated babies had pertussis titers levels believed to confer significant protection","Vaccine “A” titers were higher than vaccine “B”. Presence of Ab at birth had no blanketing effect on immunization","Babies with vaccinated mother had higher titers, but still less than the mothers","Titer in mother’s blood greater than the babies’. Greater reaction if mother had pertussis","Pertussis occurred 7x more frequently in children injected before 3rd month of life than when injected at 7th month","Vaccination in mothers increases phagocytic capacity in newborns","Mothers with high titer of pertussis Ab  “transmit” to the baby")
+        
+Historical<-cbind(Reference, Study, Measure, Results)
+colnames(Historical)<-c("Reference","Study", "Measure", "Results")
+#kable(Historical)
+#pandoc.table(Historical, split.cells = c("5%", "30%", "30%", "35%"))
+#pandoc.table(Historical, keep.line.breaks = TRUE)
+pandoc.table(data.frame(Historical), use.hyphening = TRUE, split.cells = 20)
+```
+
+\newpage
+
+Table S2 Selected recent (human) maternal immunization studies on whole-cell and or acellular effects.
+```{r vtable, results='asis', echo= FALSE}
+library(knitr)
+library(pander)
+library(koRpus)
+Reference<-c("[42]","[21]","[22]", "[29]","[17]","[19]", "[18]", "[20]")
+            
+Study<-c("Early immunization infants under 2 and 3 months using wP (alum. Precipitated)","wP vaccination of newborns","Vaccine in infants early age two different types of wP vaccine.","Series of injections of wP pertussis vaccine later months of pregnancy","Testing mother and babies during first ten days of life- No vaccine", "*H pertussis* vaccine first months of life.","Immunization of mothers during pregnancy with *H pertussis*", "wP vaccine in pregnant mothers (5-6th month of pregnancy)")
+
+Measure<-c("Rapid agglutination test and local reactions to vaccine","Serum levels of agglutinins and Ab","Sera tested for [Ab] at birth","Opsonocytophagic reaction to pertussis ", "Opsonocytophagic reaction to pertussis ","Complement fixation","Opsonocytophagic tests mothers and newborn","Blood of mothers and newborns testing agglutinins")
+Results<-c("Some local reactions of differing seriousness.  78.2% of 1834 infants’ moderate/ strong positive agglutination two to four months after immunization","Most vaccinated babies had pertussis titers levels believed to confer significant protection","Vaccine “A” titers were higher than vaccine “B”. Presence of Ab at birth had no blanketing effect on immunization","Babies with vaccinated mother had higher titers, but still less than the mothers","Titer in mother’s blood greater than the babies’. Greater reaction if mother had pertussis","Pertussis occurred 7x more frequently in children injected before 3rd month of life than when injected at 7th month","Vaccination in mothers increases phagocytic capacity in newborns","Mothers with high titer of pertussis Ab  “transmit” to the baby")
+        
+Historical<-cbind(Reference, Study, Measure, Results)
+colnames(Historical)<-c("Reference","Study", "Measure", "Results")
+pandoc.table(data.frame(Historical), use.hyphening = TRUE, split.cells = 20)

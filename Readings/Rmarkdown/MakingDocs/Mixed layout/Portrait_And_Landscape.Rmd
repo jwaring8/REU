@@ -1,0 +1,46 @@
+---
+title: "try"
+author: "Ana Bento"
+date: "May 23, 2016"
+output:
+  pdf_document:
+    includes:
+      in_header: header.tex
+keep_tex: yes
+---
+
+## Problem solved!
+
+
+
+
+```{r}
+summary(cars)
+```
+
+\newpage
+\blandscape
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+\elandscape
+
+
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+cat(paste0(
+    "\\begin{table}[ht]\\centering\\rotatebox{90}{",
+    paste0(capture.output(
+      print(xtable(summary(cars)), floating=FALSE, comment=FALSE)),
+      collapse="\n"),
+    "}\\caption{Landscape table.}\\end{table}"))
+```
+
+
+
+

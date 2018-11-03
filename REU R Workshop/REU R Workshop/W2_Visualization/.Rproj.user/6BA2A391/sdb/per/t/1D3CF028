@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "flu <- read.csv('flu.csv')\nflu\nrm(list=ls(all=TRUE))\nload('data.RData')\nls()\nplot(flu$day,flu$flu,type='b',xlab='Day',ylab='Number of individuals infected')\nprevalence<-flu$flu/764\nprevalence\nplot(flu$day, flu$flu, type='b', xlab='Day', ylab='Number of individuals infected')\nnames(niamey)[1]<-\"District 1\"\nnames(niamey)[2]<-\"District 2\"\nnames(niamey)[3]<-\"District 3\"\nView(niamey)\npng(\"Rplot.png\")\nplot(1:16, niamey$`District 1`, main=\"Measles Infections in Districts of Niger\", type='b', col='green', xlab='Day', ylab='Number of infected')\nlines(x=1:16, y = niamey$`District 2`, type = 'b', col='blue')\nlines(x=1:16, y = niamey$`District 3`, type='b', col='red')\ndev.off() #saving plot as an image called Rplot.png\nwhich(rowSums(niamey, na.rm=T)==max(rowSums(niamey, na.rm =T)))\nrowSums(niamey)[10]\nbiweek.sum<-rowSums(niamey)\nbiweek<-1:16\nplot(biweek, biweek.sum, type='l', ylab='Measles cases in all districts', xlab='Biweek period')\nmax<-which(biweek.sum==max(biweek.sum, na.rm=T))\nabline(v=10, col='red')\n",
+    "created" : 1464370330956.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3588142420",
+    "id" : "1D3CF028",
+    "lastKnownWriteTime" : 1464377319,
+    "last_content_update" : 1464377319714,
+    "path" : "~/REU R Workshop/REU R Workshop/W2_Visualization/DataVisualWorkshop.R",
+    "project_path" : "DataVisualWorkshop.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

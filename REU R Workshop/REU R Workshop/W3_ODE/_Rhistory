@@ -1,0 +1,328 @@
+update.packages()
+update.packages()
+source("http://kingaa.github.io/sbied/prep/packages.R",echo=TRUE)
+source("http://kingaa.github.io/sbied/prep/pompTest.R",echo=TRUE)
+update.packages()
+source("http://kingaa.github.io/sbied/prep/packages.R",echo=TRUE)
+source("http://kingaa.github.io/sbied/prep/packages.R",echo=TRUE)
+flu <- read.csv('flu.csv')
+flu <- read.csv('flu.csv')
+flu <- read.csv('flus.csv')
+flu <- read.csv('flu.csv')
+flu <- read.csv('flu.csv')
+setwd("~/REU R Workshop/REU R Workshop/W3_ODE")
+simplefunction <- function(x) {}
+polynomial <- function(x) {
+y <- (5*(x^3))+(6*x)-(4/x)
+return(y)
+}
+function(5)
+polynomial(5)
+polynomial(3)
+vector <- polynomial(-10:-1)
+plot(vector)
+which(vector == -7)
+plot(vector, type ='b')
+polynomial(3)
+x <- seq(-10, -1, .01)
+y <- polynomial(x)
+plot(x, y, type ='l', xlab = 'X values', ylab = 'Y values', lwd=3.0)
+x[which(y==-7)]
+plot(x, y, type ='l', xlab = 'X values', ylab = 'Y values', main = '5x^3+6x-4/x', lwd=3.0)
+discreteTimeModel <- function(lambda, popAtTime) {
+return(lambda * popAtTime)
+}
+source('~/REU R Workshop/REU R Workshop/W3_ODE/ODEworkshop.R', echo=TRUE)
+source('~/REU R Workshop/REU R Workshop/W3_ODE/ODEworkshop.R', echo=TRUE)
+source('~/REU R Workshop/REU R Workshop/W3_ODE/ODEworkshop.R', echo=TRUE)
+x2 <- 0:20
+y2 <- distreteTimeModel2(0.75, 1, x2)
+y2 <- discreteTimeModel2(0.75, 1, x2)
+y3 <- discreteTimeModel2(1, 1, x2)
+y4 <- discreteTimeModel2(2.0, 1, x2)
+plot(x2, y2, type='l', xlab = 'X values', ylab = 'Y values', col = 'red')
+line(x2, y3, col = 'black')
+line(x2, y4, col = 'blue')
+line(x2, y3)
+line(x2, y4)
+lines(x2, y3, col = 'black')
+lines(x2, y4, col = 'blue')
+x2 <- 0:20
+y2 <- discreteTimeModel2(0.75, 1, x2)
+y3 <- discreteTimeModel2(1, 1, x2)
+y4 <- discreteTimeModel2(2.0, 1, x2)
+plot(x2, y2, type='l', xlab = 'X values', ylab = 'Y values', col = 'red')
+lines(x2, y3, col = 'black')
+lines(x2, y4, col = 'blue')
+help(plot)
+plot(x2, y2, type='l', xlab = 'X values', ylab ='Y values', col = 'red', xlim = 0:20, ylim = -5:5)
+lines(x2, y3, col = 'black')
+plot(x2, y2, type='l', xlab = 'X values', ylab ='Y values', col = 'red', ylim = c(-5,5))
+lines(x2, y3, col = 'black')
+lines(x2, y4, col = 'blue')
+continuousTimeModel <- function(r, t, initialPop) {
+return(initialPop * e^(r*t))
+}
+y5 <- continuousTimeModel(0.05, x2, 1)
+continuousTimeModel <- function(r, t, initialPop) {
+return(initialPop * 2.71828^(r*t))
+}
+y5 <- continuousTimeModel(0.05, x2, 1)
+plot(x2, y5, type ='l')
+x2 <- 0:20
+y2 <- discreteTimeModel2(0.75, 1, x2)
+y3 <- discreteTimeModel2(1, 1, x2)
+y4 <- discreteTimeModel2(2.0, 1, x2)
+plot(x2, y2, type='l', xlab = 'X values', ylab ='Y values', col = 'red', ylim = c(-5,5))
+lines(x2, y3, col = 'black')
+lines(x2, y4, col = 'blue')
+plot(x2, y2, type='l', xlab = 'X values', ylab ='Y values', col = 'red')
+x2 <- 0:20
+y2 <- discreteTimeModel2(0.75, 1, x2)
+y3 <- discreteTimeModel2(1, 1, x2)
+y4 <- discreteTimeModel2(2.0, 1, x2)
+plot(x2, y2, type='l', xlab = 'X values', ylab ='Y values', col = 'red')
+plot(x2, y3, col = 'black', type ='l')
+plot(x2, y4, col = 'blue', type ='l')
+plot(x2, y2, pch = 21, bg = "grey40", cex = 2.0, xlab = 'X values', ylab ='Y values', col = 'red')
+plot(x2, y2, pch = 21, bg = "grey40", col = 'black', cex = 2.0, xlab = 'X values', ylab ='Y values', col = 'red')
+plot(x2, y2, pch = 21, bg = "grey40", col = 'black', cex = 2.0, xlab = 'X values', ylab ='Y values')
+plot(x2, y3, col = 'black', pch = 21, bg = "dodgerblue", cex = 2.0)
+plot(x2, y4, col = 'black', pch = 21, bg = firebrick, cex = 2.0)
+plot(x2, y4, col = 'black', pch = 21, bg = "firebrick", cex = 2.0)
+y5 <- continuousTimeModel(0.05, x2, 1)
+plot(x2, y5, col = 'black', pch =21, bg = "green", cex =2.0)
+plot(x2, y4, col = 'black', pch = 21, bg = "firebrick", cex = 2.0)
+plot(x2, y3, col = 'black', pch = 21, bg = "dodgerblue", cex = 2.0)
+plot(x2, y4, col = 'black', pch = 21, bg = "firebrick", cex = 2.0)
+ls()
+clear
+ls
+ls()
+reuire(deSolve)
+require(deSolve)
+y0 <- c(N = 100)
+time.vec <- seq(0, 2, 0.1) #vector of times for function to return the values of variables in the Differential equations
+r = 0.05
+plot(x2, y5, col = 'black', pch =21, bg = "green", cex =2.0)
+#LSODA stuff
+y0 <- c(N = 100) #vector of initial variable values in the system (initialPop = 100)
+time.vec <- seq(0, 2, 0.1) #vector of times for function to return the values of variables in the Differential equations
+params <- c(r = r)
+plot(x2, y4, col = 'black', pch = 21, bg = "firebrick", cex = 2.0)
+y0 <- c(N = 100) #vector of initial variable values in the system (initialPop = 100)
+time.vec <- seq(0, 2, 0.1) #vector of times for function to return the values of variables in the Differential equations
+r = 0.75
+params <- c(r = r) #vector of param values
+func <- function(t, y, params) { #function to represent right hand side of diff equation
+N <- y["N"] #N is the value of "N" in the y vector
+r <- params["r"] #r is the value of "r" in the params vector
+dN <- r*N #dN/dt
+return(list(c(dN)))
+}
+odeoutput <- lsoda(y0, t.vec, func, params)
+y0 <- c(N = 100) #vector of initial variable values in the system (initialPop = 100)
+time.vec <- seq(0, 2, 0.1) #vector of times for function to return the values of variables in the Differential equations
+r = 0.75
+params <- c(r = r) #vector of param values
+func <- function(t, y, params) { #function to represent right hand side of diff equation
+N <- y["N"] #N is the value of "N" in the y vector
+r <- params["r"] #r is the value of "r" in the params vector
+dN <- r*N #dN/dt
+return(list(c(dN)))
+}
+odeoutput <- lsoda(y0, time.vec, func, params)
+odeoutput
+plot(odeoutput)
+odeoutput <- as.data.frame(odeoutput)
+odeoutput
+head(odeoutput)
+y0 <- c(N = 1.0) #vector of initial variable values in the system (initialPop = 100)
+time.vec <- seq(0, 2, 0.1) #vector of times for function to return the values of variables in the Differential equations
+r = 0.75
+params <- c(r = r) #vector of param values
+func <- function(t, y, params) { #function to represent right hand side of diff equation
+N <- y["N"] #N is the value of "N" in the y vector
+r <- params["r"] #r is the value of "r" in the params vector
+dN <- r*N #dN/dt
+return(list(c(dN)))
+}
+odeoutput <- lsoda(y0, time.vec, func, params)
+odeoutput <- as.data.frame(odeoutput)
+plot(odeoutput, type ='b')
+head(odeoutput)
+plot(N~time, data=odeoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=2.0)
+y0 <- c(N = 1.0) #vector of initial variable values in the system (initialPop = 1)
+time.vec <- seq(0, 10, 0.1) #vector of times for function to return the values of variables in the Differential equations
+r = 0.75
+params <- c(r = r) #vector of param values
+func <- function(t, y, params) { #function to represent right hand side of diff equation
+N <- y["N"] #N is the value of "N" in the y vector
+r <- params["r"] #r is the value of "r" in the params vector
+dN <- r*N #dN/dt
+return(list(c(dN)))
+}
+odeoutput <- lsoda(y0, time.vec, func, params)
+odeoutput <- as.data.frame(odeoutput)
+plot(N~time, data=odeoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=2.0)
+tail(odeoutput)
+y0 <- c(N = 100) #vector of initial variable values in the system (initialPop = 1)
+time.vec <- seq(0, 10, 0.1) #vector of times for function to return the values of variables in the Differential equations
+r = -.5
+params <- c(r = r) #vector of param values
+func <- function(t, y, params) { #function to represent right hand side of diff equation
+N <- y["N"] #N is the value of "N" in the y vector
+r <- params["r"] #r is the value of "r" in the params vector
+dN <- r*N #dN/dt
+return(list(c(dN)))
+}
+odeoutput <- lsoda(y0, time.vec, func, params)
+odeoutput <- as.data.frame(odeoutput)
+plot(N~time, data=odeoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=2.0)
+tail(odeoutput)
+y0 <- c(N = 1.0) #vector of initial variable values in the system (initialPop = 1)
+time.vec <- seq(0, 10, 0.1) #vector of times for function to return the values of variables in the Differential equations
+r = .75
+params <- c(r = r) #vector of param values
+func <- function(t, y, params) { #function to represent right hand side of diff equation
+N <- y["N"] #N is the value of "N" in the y vector
+r <- params["r"] #r is the value of "r" in the params vector
+dN <- r*N #dN/dt
+return(list(c(dN)))
+}
+odeoutput <- lsoda(y0, time.vec, func, params)
+odeoutput <- as.data.frame(odeoutput)
+plot(N~time, data=odeoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=2.0)
+ClosedSIR <- function(t, y, params) {
+S <- y["S"]; I <- y["I"]; R<-y["R"]; N <- S+I+R
+beta <- params["beta"]; gamma <- params["gamma"]
+dS <- -beta*I/N*S
+dI <- beta*I/N*S - gamma*I
+dR <- gamma*I
+return(list(c(dS, dI, dR)))
+}
+t.vec <- seq(0, 120, 0.1)
+beta <- 0.3; gamma <- 1/7
+params <- c(beta = beta, gamma = gamma)
+N <- 10000
+I0 <- 1/N
+S0 <- 9999/N
+R0 <- 0/N
+y0 <- c(S=S0, I=I0, R=R0)
+SIRoutput <- lsoda(y0, t.vec, ClosedSIR, params)
+SIRoutput <- as.data.frame(SIRoutput)
+SIRoutput
+head(SIRoutput)
+plot(SIRoutput)
+tail(SIRoutput)
+plot(S~time, data=SIRoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=2.0)
+plot(S~time, data=SIRoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=1.0)
+lines(I~time)
+lines(I~time, data= SIRoutput, pch=21, bg= 'red', col = 'black', cex=1.0)
+plot(S~time, data=SIRoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=1.0)
+plot(I~time, data=SIRoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=1.0)
+plot(R~time, data=SIRoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=1.0)
+plot(S~time, data=SIRoutput, pch = 21, bg ='dodgerblue', col = 'black', cex=1.0)
+plot(S~time, data=SIRoutput, type='b', col='red', ylim=c(0,1), ylab="Proportion", xlab='Time')
+lines(I~time, data=SIRoutput, type='b', col = 'blue')
+lines(R~time, data=SIRoutput, type='b', col='green')
+help(dbinom)
+dbinom(3, 6, 0.5)
+dbinom(3, 6, 0.6)
+dbinom(3, 6, 0.6)
+dbinom(1, 6, 0.6)
+dbinom(4, 6, 0.6)
+dbinom(6, 6, 1)
+dbinom(5, 6, 1)
+dbinom(5, 4, 1)
+dbinom(3, 6, .5)
+dbinom(4, 8, .5)
+dbinom(1, 10, .5)
+alpha <- 0.96
+N <- 100
+i <- 1
+s0 <- N-i
+t <- 0 #start time
+out.rf <- c(t, s0, i)
+while(i > 0){
+s <- rbinom(1, s0, alpha^i)
+i <- s0-s
+t <- t+1
+out.rf <- rbind(out.rf, c(t,s,i))
+s0 <- s
+}
+out.rf <- as.data.frame(out.rf)
+names(out.rf) <- c("time", "S", "I")
+head(out.rf)
+out.rf
+out.rf
+print(out.rf)
+View(out.rf)
+plot(I~time)
+plot(I~time, data=out.rf)
+plot(I~time, data=out.rf, type ='b')
+lines(S~time, data=out.rf, type='b')
+plot(S~time, data=out.rf, type ='b')
+lines(I~time, data=out.rf, type='b')
+plot(S~time, data=out.rf, type ='l')
+lines(I~time, data=out.rf, type='l')
+ClosedSIS <- function(t, y, params) {
+S <- y["S"]; I <- y["I"]; N <- S+I
+beta <- params["beta"]; gamma <- params["gamma"]
+dS <- -beta*I/N*S + gamma*I
+dI <- beta*I/N*S - gamma*I
+return(list(c(dS, dI)))
+}
+t.vec <- seq(0, 120, 0.1)
+beta <- 0.4; gamma <- 1/14
+params <- c(beta = beta, gamma = gamma)
+N <- 10000
+I0 <- 1/N
+S0 <- 9999/N
+y0 <- c(S=S0, I=I0)
+SISoutput <- lsoda(y0, t.vec, ClosedSIS, params)
+SISoutput <- as.data.frame(SISoutput)
+plot(S~time, data=SISoutput, type='b', col='red', ylim=c(0,1), ylab="Proportion", xlab='Time')
+lines(I~time, data=SISoutput, type='b', col = 'blue')
+ClosedSIS <- function(t, y, params) {
+S <- y["S"]; I <- y["I"]; N <- S+I
+beta <- params["beta"]; gamma <- params["gamma"]
+dS <- -beta*I/N*S + gamma*I
+dI <- beta*I/N*S - gamma*I
+return(list(c(dS, dI)))
+}
+t.vec <- seq(0, 120, 0.1)
+beta <- 0.2; gamma <- 1/5
+params <- c(beta = beta, gamma = gamma)
+N <- 10000
+I0 <- 1/N
+S0 <- 9999/N
+y0 <- c(S=S0, I=I0)
+SISoutput <- lsoda(y0, t.vec, ClosedSIS, params)
+SISoutput <- as.data.frame(SISoutput)
+plot(S~time, data=SISoutput, type='b', col='red', ylim=c(0,1), ylab="Proportion", xlab='Time')
+lines(I~time, data=SISoutput, type='b', col = 'blue')
+ClosedSIS <- function(t, y, params) {
+S <- y["S"]; I <- y["I"]; N <- S+I
+beta <- params["beta"]; gamma <- params["gamma"]
+dS <- -beta*I/N*S + gamma*I
+dI <- beta*I/N*S - gamma*I
+return(list(c(dS, dI)))
+}
+t.vec <- seq(0, 120, 0.1)
+beta <- 0.4; gamma <- 1/7
+params <- c(beta = beta, gamma = gamma)
+N <- 10000
+I0 <- 1/N
+S0 <- 9999/N
+y0 <- c(S=S0, I=I0)
+SISoutput <- lsoda(y0, t.vec, ClosedSIS, params)
+SISoutput <- as.data.frame(SISoutput)
+plot(S~time, data=SISoutput, type='b', col='red', ylim=c(0,1), ylab="Proportion", xlab='Time')
+lines(I~time, data=SISoutput, type='b', col = 'blue')
+ex1 <- function(x){return(5*x^3+6*x-4/x)}
+ex1(3)
+ex1.x <- seq(-10,-1,0.01)
+ex1.y <- ex1(ex1.x)
+plot(ex1.x, ex1.y, type="l", xlab="x", ylab="y", lwd=3.0)
+ex1.x[which(ex1.y==-7)]

@@ -1,0 +1,89 @@
+---
+title: "Exercise"
+author: "Jonathan Waring"
+date: "June 1, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Ebola
+
+I'm reading in ebola data from the PLoS paper. Then I will summarize it and possibly make some figures. The figures include:
+    
+    1. time series plot
+    2. distribution of cases per day for each country
+    
+```{r citing setup, echo=F}    
+library(knitcitations)
+cleanbib()
+options("citation_format" = "pandoc")
+```
+
+The citation for the data is here: `r citet('http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002056')` 
+
+```{r ebola, tidy=TRUE}
+ebola <- read.csv('http://tinyurl.com/qhrmkht')
+plot(value~Date, col=ifelse(Country=="Guinea",1,2), data=ebola)
+max(ebola$value)
+summary(ebola$value)
+```
+
+Here's some more information. 
+
+Mean: `r mean(ebola$value)` 
+
+Standard Deviation: `r sd(ebola$value)` 
+
+Variance: `r var(ebola$value)` 
+
+## Data Questions
+
+1. What does the data represent?
+This data represents cumulative Ebola virus cases in Guinea from 2014-2015.
+
+2. What is included in the data set?
+There is a combination of probable, suspected, and confirmed Ebola cases and deaths from
+the recent West Africa Ebola outbreak. The cases are broken down by country and the most 
+recent counts along with the dates. 
+
+3. What have I included?
+I have included the max value of ebola counts, as well as some summary statistics on the Ebola counts. 
+
+## Peanut Butter Figure Time! (That was a lame joke)
+
+Let's do some coding things for figures and whatnot. 
+
+```{r plotting things, echo=T, fig.width=6.0, fig.height=4.0}
+require(deSolve)
+ClosedSIR <- function(t, y, params) {
+  S <- y["S"]; I <- y["I"]; R<-y["R"]; N <- S+I+R
+  beta <- params["beta"]; gamma <- params["gamma"]
+  dS <- -beta*I/N*S
+  dI <- beta*I/N*S - gamma*I
+  dR <- gamma*I
+  return(list(c(dS, dI, dR)))
+}
+t.vec <- seq(0, 120, 0.1)
+beta <- 0.3; gamma <- 1/7
+params <- c(beta = beta, gamma = gamma)
+N <- 10000
+I0 <- 1/N
+S0 <- 9999/N
+R0 <- 0/N
+y0 <- c(S=S0, I=I0, R=R0)
+
+SIRoutput <- lsoda(y0, t.vec, ClosedSIR, params)
+SIRoutput <- as.data.frame(SIRoutput)
+plot(S~time, data=SIRoutput, type='b', col='red', ylim=c(0,1), ylab="Proportion", xlab='Time')
+lines(I~time, data=SIRoutput, type='b', col = 'blue')
+lines(R~time, data=SIRoutput, type='b', col='green')
+```
+
+The example above shows how to make a simple closed SIR model. Feel free to mess with the parameters to see how it affects the model! Pretty cool stuff(at least that's what they tell me!)
+
+## Here's a meme for ya troubles
+![MEME](https://s-media-cache-ak0.pinimg.com/736x/47/83/d3/4783d3ce19a5e7fdc89d41471a5580cf.jpg)
+

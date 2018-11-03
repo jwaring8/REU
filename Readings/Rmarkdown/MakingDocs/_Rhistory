@@ -1,0 +1,75 @@
+install.packages("ggplot2")
+devtools::install_github("ropensci/rgbif")
+install.packages("rgbif")
+install.packages("pander")
+install.packages("koRpus")
+num_age <-17
+## paremeters
+gamma = 1/15  # is this correct, I want it to be approx 15 days
+beta=matrix(rep(50, num_age^2),nrow=num_age,byrow=TRUE) # make another scenario where there is assortative vs hom
+mu = rep (1/(75*365), num_age)
+nu = c(1 / (75 * 365), rep(0,num_age-1)) ## births
+alpha = c( 1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/(4*365),1/(6*365),1/(2*365), 1/(7*365), 1/(25*365), 1/(30*365)) # aging is much faster in the categories that are one month long
+rho = 0.9 # percentage of coverage of routine vaccination
+Mrho = 0.7 # percentage of coverage of maternal vaccination
+Matepsilon = 1/(6*30) # this maternity immunity wanes over a period of 6 months
+epsilon= 1/(75*365)
+S<-c(4.377736e-04, 5.417105e-05, 6.320555e-05, 8.181365e-06, 9.938890e-06, 2.232192e-06, 3.718354e-06, 4.898117e-06, 6.073999e-06, 7.246011e-06, 8.414162e-06, 2.780938e-03, 8.387854e-03, 8.365489e-04, 8.147250e-03, 5.615113e-02, 3.632268e-01 )
+Nage<-17
+F_mat<-matrix (rep(0,Nage^2 ), nrow=Nage, byrow=TRUE)
+V_mat<-matrix (rep(0,Nage^2 ), nrow=Nage, byrow=TRUE)
+gains<-function(beta, S, i,j){
+return (beta[i,j]*S[i])
+}
+flow<- function(gamma, mu, alpha, i, j){
+if (i==j){
+return (gamma+mu+alpha[i])
+}
+else if (i-1 == j){
+return (alpha [i-1])
+}
+else{
+return(0)
+}
+}
+for (i in 1:17) {
+for (j in 1:17){
+F_mat[i,j]<- t(gains(beta, S,i,j))
+V_mat[i,j]<- t(flow(gamma, mu, alpha, i,j))
+}
+}
+nu = c(1 / (75 * 365), rep(0,Nage-1)) ## births
+nu
+Nage <-17
+## paremeters
+gamma = 1/15  # is this correct, I want it to be approx 15 days
+beta=matrix(rep(50, Nage^2),nrow=num_age,byrow=TRUE) # make another scenario where there is assortative vs hom
+mu = rep (1/(75*365), Nage)
+nu = c(1 / (75 * 365), rep(0,Nage-1)) ## births
+alpha = c( 1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/30,1/(4*365),1/(6*365),1/(2*365), 1/(7*365), 1/(25*365), 1/(30*365)) # aging is much faster in the categories that are one month long
+rho = 0.9 # percentage of coverage of routine vaccination
+Mrho = 0.7 # percentage of coverage of maternal vaccination
+Matepsilon = 1/(6*30) # this maternity immunity wanes over a period of 6 months
+epsilon= 1/(75*365)
+S<-c(4.377736e-04, 5.417105e-05, 6.320555e-05, 8.181365e-06, 9.938890e-06, 2.232192e-06, 3.718354e-06, 4.898117e-06, 6.073999e-06, 7.246011e-06, 8.414162e-06, 2.780938e-03, 8.387854e-03, 8.365489e-04, 8.147250e-03, 5.615113e-02, 3.632268e-01 )
+Nage<-17
+F_mat<-matrix (rep(0,Nage^2 ), nrow=Nage, byrow=TRUE)
+V_mat<-matrix (rep(0,Nage^2 ), nrow=Nage, byrow=TRUE)
+gains<- function(beta, S, i,j){
+return (beta[i,j]*S[i])
+}
+flow<- function(gamma, mu, alpha, i,j){
+if (i==j){
+return (gamma+mu+alpha[i])
+}else if (i-1 == j){
+return (alpha [i-1])
+}else{
+return(0)
+}
+}
+for (i in 1:17) {
+for (j in 1:17){
+F_mat[i,j]<- t(gains(beta, S,i,j))
+V_mat[i,j]<- t(flow(gamma, mu, alpha, i,j))
+}
+}
